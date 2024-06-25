@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import myContext from '../../context/myContext'
 import { ProductContext } from '../../context/ProductContext'
 
+
 const HomePageProduct = () => {
  
     const {products}=useContext(ProductContext)
@@ -13,6 +14,10 @@ const HomePageProduct = () => {
         navigate(`/product/${id}`)
     };
 
+    const handleAddToCart = (item) => {
+        alert("Added")
+        addToCart(item)
+     };
   return (
     <div className='flex flex-col justify-center items-center '>
         <div className='font-bold text-2xl md:text-4xl lg:text-5xl mt-8'>
@@ -41,7 +46,7 @@ const HomePageProduct = () => {
                                                 ₹{price}.00
                                             </h1>
                                             <div className="flex justify-center ">
-                                                <button onClick={()=> addToCart(item)} className=" bg-emerald-500 hover:bg-emerald-400 w-full text-white py-[4px] rounded-lg font-bold">
+                                                <button onClick={()=> handleAddToCart(item)} className=" bg-emerald-500 hover:bg-emerald-400 w-full text-white py-[4px] rounded-lg font-bold">
                                                     Add to Cart
                                                 </button>
                                             </div>

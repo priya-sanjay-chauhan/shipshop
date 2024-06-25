@@ -14,6 +14,7 @@ import UpdateProductPage from "./pages/Admin/UpdateProductPage"
 import ContextProvider from "./context/ContextProvider"
 import { ProductProvider } from "./context/ProductContext"
 
+
 function App() {
 
   return (
@@ -29,12 +30,13 @@ function App() {
         <Route path="/allitem" element={<AllItem/>}/>
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/login" element={<Login/>}/>
-        <Route path="/user" element={<UserDashBoard/>}/>
-        <Route path="/admin" element={<AdminDashboard/>}/>
+        {/* <Route path="/user" element={<UserDashBoard/>}/> */}
+        {/* <Route path="/admin" element={<AdminDashboard/>}/> */}
         <Route path="/addproduct" element={<AddProductPage/>}/>
         <Route path="updateproduct" element={<UpdateProductPage/>}/>
       </Routes>
       <Footer/>
+
     </BrowserRouter>
     </ContextProvider>
     </ProductProvider>

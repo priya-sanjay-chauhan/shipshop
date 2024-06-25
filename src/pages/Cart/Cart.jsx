@@ -4,7 +4,12 @@ import myContext from '../../context/myContext';
 
 const Cart = () => {
     
-    const { cart,increment,decrement } = useContext(myContext);
+    const { cart,increment,decrement,removeItem,cartCount } = useContext(myContext);
+    
+    const calculateTotal = () => {
+        return cart.reduce((total, product) => total + (product.price) * product.quantity, 0);
+    };
+ 
   return (
     <div>
         <div className="container mx-auto px-4 max-w-7xl lg:px-0">
@@ -82,7 +87,7 @@ const Cart = () => {
                                             <div className="ml-6 flex text-sm">
                                                 <button type="button" className="flex items-center space-x-1 px-2 py-1 pl-0">
                                                     <FaRegTrashAlt size={12} className="text-red-500" />
-                                                    <span className="text-xs font-medium text-red-500">Remove</span>
+                                                    <span className="text-xs font-medium text-red-500" onClick={()=> removeItem(id)}>Remove</span>
                                                 </button>
                                             </div>
                                         </div>
@@ -138,15 +143,15 @@ const Cart = () => {
                             <div>
                                 <dl className=" space-y-1 px-2 py-4">
                                     <div className="flex items-center justify-between">
-                                        <dt className="text-sm text-gray-800">Price (3 item)</dt>
-                                        <dd className="text-sm font-medium text-gray-900">₹ 52,398</dd>
+                                        <dt className="text-sm text-gray-800">Price ({cartCount} item)</dt>
+                                        <dd className="text-sm font-medium text-gray-900">Rs.{calculateTotal()}</dd>
                                     </div>
-                                    <div className="flex items-center justify-between pt-4">
+                                    {/* <div className="flex items-center justify-between pt-4">
                                         <dt className="flex items-center text-sm text-gray-800">
                                             <span>Discount</span>
                                         </dt>
                                         <dd className="text-sm font-medium text-green-700">- ₹ 3,431</dd>
-                                    </div>
+                                    </div> */}
                                     <div className="flex items-center justify-between py-4">
                                         <dt className="flex text-sm text-gray-800">
                                             <span>Delivery Charges</span>
@@ -155,7 +160,7 @@ const Cart = () => {
                                     </div>
                                     <div className="flex items-center justify-between border-y border-dashed py-4 ">
                                         <dt className="text-base font-medium text-gray-900">Total Amount</dt>
-                                        <dd className="text-base font-medium text-gray-900">₹ 48,967</dd>
+                                        <dd className="text-base font-medium text-gray-900">Rs.{calculateTotal()}</dd>
                                     </div>
                                 </dl>
                                 <div className="px-2 pb-4 font-medium text-green-700">

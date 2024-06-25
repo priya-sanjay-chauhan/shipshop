@@ -15,6 +15,11 @@ const AllItem = () => {
     const handleClick=(id)=>{
         navigate(`/product/${id}`)
     }
+
+    const handleAddToCart = (item) => {
+        alert("Added")
+        addToCart(item)
+     };
     return (
         <>
     <div className="py-8">
@@ -47,7 +52,7 @@ const AllItem = () => {
                                                 ₹{price}.00
                                             </h1>
                                             <div className="flex justify-center ">
-                                                <button onClick={()=> addToCart(item)} className=" bg-emerald-500 hover:bg-emerald-600 w-full text-white py-[4px] rounded-lg font-bold">
+                                                <button onClick={()=> handleAddToCart(item)} className=" bg-emerald-500 hover:bg-emerald-600 w-full text-white py-[4px] rounded-lg font-bold">
                                                     Add to Cart
                                                 </button>
                                             </div>
