@@ -9,7 +9,7 @@ const HeroSection = () => {
                 <p>Get your fashion</p>
              </div>
              <div className=' w-5/12'>
-                <img src="./public/images/3.png"  alt="" />
+                <img src="./images/3.png"  alt="" />
              </div>
         </div>
     </div>
