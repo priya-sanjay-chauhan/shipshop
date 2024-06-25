@@ -4,7 +4,7 @@ const HeroSection = () => {
   return (
     <div>
         <div className='flex justify-evenly items-center text bg-green-100'>
-             <div className='flex flex-col gap-2 lg:gap-5 text-3xl md:text-5xl lg:text-6xl'>
+             <div className='flex flex-col gap-1 lg:gap-5 text-xl font-semibold md:text-5xl lg:text-6xl'>
                 <p>Your Online Shop</p>
                 <p>Get your fashion</p>
              </div>
