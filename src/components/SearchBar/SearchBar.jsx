@@ -58,8 +58,8 @@ const SearchBar = () => {
 
     return (
         <div>
-            <div className='flex border items-center h-10 rounded-3xl px-4 pr-0'>
-                <div className='flex gap-5 items-center pr-5 '>
+            <div className='flex border items-center h-10 rounded-3xl px-4 pr-0 '>
+                <div className='flex gap-5 items-center pr-5 w-36 md:w-52 '>
 
                     <input onChange={filter} value={searchInput} type="text" placeholder='Search...' className=' bg-transparent focus:outline-none rounded-3xl text-white text-lg px-3' />
                 </div>
@@ -67,7 +67,7 @@ const SearchBar = () => {
                     <IoIosSearch className='text-xl' />
                 </button>
             </div>
-            <div className='absolute top-44 lg:top-[80px] px-5 bg-gray-300 min-w-80 lg:w-3/12 rounded-lg'>
+            <div className='absolute top-54 lg:top-[80px] px-5 bg-gray-300 min-w-56 md:w-72 rounded-lg'>
             {filterData.map((item,i)=>(
                     <div key={i} className="flex items-center my-2">
                        <img src={item.image} alt={item.name} className="w-10 h-10 rounded-full mr-3"/>
